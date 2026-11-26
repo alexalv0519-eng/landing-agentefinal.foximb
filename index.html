@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fox Inmobiliario · Asesoría Jurídica Inmobiliaria y Notarial en Antioquia, Colombia. Calcula cierres, audita tradiciones y redacta documentos con inteligencia artificial." />
+  <title>Fox Inmobiliario · Respaldo Jurídico | Asesor IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=13" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR FIJA ===================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="#inicio" aria-label="Fox Inmobiliario, ir al inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 4.5 6v5.4c0 4.6 3.1 8.2 7.5 9.6 4.4-1.4 7.5-5 7.5-9.6V6L12 3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Fox Inmobiliario</strong>
+          <small>Respaldo Jurídico</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <button id="nav-agente" class="tab-btn is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-agente" data-tab="agente">Agente IA</button>
+        <button id="nav-tramites" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-tramites" data-tab="tramites">Trámites y Requisitos</button>
+        <button id="nav-contacto" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-contacto" data-tab="contacto">Contacto</button>
+      </nav>
+
+      <div class="header-actions">
+        <span id="api-status" class="status-badge" aria-live="polite">Modo Demo</span>
+        <button id="settings-btn" class="btn btn-outline btn-sm" type="button" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2 2-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21h-2.8v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-2-2 .1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3v-2.8h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 2-2 .1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V3h2.8v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 2 2-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1H21v2.8h-.1a1.7 1.7 0 0 0-1.5 1Z" />
+          </svg>
+          <span>Configurar API Key</span>
+        </button>
+        <button id="open-assistant-btn" class="btn btn-primary btn-sm" type="button">Abrir Asesor</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ===================== HERO EJECUTIVO ===================== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="hero-pill">Asesoría Jurídica Inmobiliaria &amp; Notarial · Antioquia, Colombia</p>
+        <h1>Decisiones inmobiliarias con <span>respaldo jurídico</span></h1>
+        <p class="hero-subtitle">
+          Calcula gastos de cierre, audita certificados de tradición y estructura tus negocios inmobiliarios en Colombia
+          con rigor notarial y asistencia de inteligencia artificial.
+        </p>
+        <div class="hero-actions">
+          <button id="hero-open-btn" class="btn btn-primary" type="button">
+            Hablar con el Asesor IA
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+          <button class="btn btn-outline" type="button" data-tab-go="tramites">Ver Trámites y Requisitos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TABS SEGMENTADAS ===================== -->
+    <div class="segment-bar" role="tablist" aria-label="Vistas de la aplicación">
+      <div class="container">
+        <div class="segmented">
+          <button id="tab-agente" class="tab-btn is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-agente" data-tab="agente">
+            <span class="tab-num">01</span> Workspace Asesor IA
+          </button>
+          <button id="tab-tramites" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-tramites" data-tab="tramites">
+            <span class="tab-num">02</span> Guía de Trámites y Requisitos (7 Actos)
+          </button>
+          <button id="tab-contacto" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-contacto" data-tab="contacto">
+            <span class="tab-num">03</span> Contacto y Asesoría Directa
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panels">
+
+      <!-- ===================== VISTA 1: WORKSPACE ===================== -->
+      <section id="panel-agente" class="tab-panel is-active workspace" role="tabpanel" aria-labelledby="tab-agente">
+        <div class="container">
+
+          <div class="workspace-shell">
+            <div class="workspace-header">
+              <div class="workspace-heading">
+                <span class="workspace-crest" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4.5 6v5.4c0 4.6 3.1 8.2 7.5 9.6 4.4-1.4 7.5-5 7.5-9.6V6L12 3Z" /><path d="m9 12 2 2 4-4" /></svg>
+                </span>
+                <div>
+                  <h2>Asesor Jurídico y Comercial IA <span class="model-tag">gemini-2.5-flash</span></h2>
+                  <p>Workspace legal · cierre, tradición y redacción en una sola conversación</p>
+                </div>
+              </div>
+              <span class="workspace-secure">Respuesta informativa · estudio de títulos formal</span>
+            </div>
+
+            <div class="skills-bar" aria-label="Skills especializadas">
+              <button class="skill-card" type="button" data-flow="calculadora">
+                <span class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 7h8M8 11h8M8 15h4M8 19h8" /></svg>
+                </span>
+                <span class="skill-copy">
+                  <strong>01 · Calcular cierre</strong>
+                  <small>Estima gastos notariales, retención en la fuente, boleta fiscal (rentas) y derechos de registro.</small>
+                </span>
+                <span class="skill-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="skill-card" type="button" data-flow="auditoria">
+                <span class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z" /><path d="M14 3v5h5M9 13h6M9 17h6" /></svg>
+                </span>
+                <span class="skill-copy">
+                  <strong>02 · Revisar tradición</strong>
+                  <small>Analiza anotaciones, embargos, hipotecas y limitaciones del Certificado de Tradición y Libertad.</small>
+                </span>
+                <span class="skill-arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="skill-card" type="button" data-flow="match">
+                <span class="skill-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></svg>
+                </span>
+                <span class="skill-copy">
+                  <strong>03 · Perfilar y redactar</strong>
+                  <small>Estructura ofertas de compra, promesas de compraventa y solicitudes jurídicas.</small>
+                </span>
+                <span class="skill-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+
+            <div class="workspace-grid">
+              <!-- Panel de herramientas / guía rápida -->
+              <aside class="workspace-side">
+                <article class="side-card">
+                  <p class="side-eyebrow">Guía rápida</p>
+                  <h3>Cómo trabajar con el asesor</h3>
+                  <ol class="side-steps">
+                    <li><span>1</span><div><strong>Elige una skill</strong><small>Los botones superiores cargan el flujo guiado correspondiente.</small></div></li>
+                    <li><span>2</span><div><strong>Aporta los datos</strong><small>Escribe tu consulta o adjunta un archivo `.txt` / `.pdf`.</small></div></li>
+                    <li><span>3</span><div><strong>Revisa y descarga</strong><small>Copia la respuesta o guarda la conversación en Markdown.</small></div></li>
+                  </ol>
+                </article>
+
+                <article class="side-card side-card-dark">
+                  <p class="side-eyebrow">Alcance profesional</p>
+                  <h3>Criterio notarial, lenguaje claro</h3>
+                  <p>Las cifras son referenciales y están sujetas a tarifas vigentes. Un abogado debe confirmar cualquier decisión con estudio de títulos.</p>
+                  <button class="side-link" type="button" data-tab-go="contacto">Hablar con el abogado →</button>
+                </article>
+
+                <article class="side-card">
+                  <p class="side-eyebrow">Consultas frecuentes</p>
+                  <div class="side-links">
+                    <button type="button" data-ask="¿Qué requisitos necesito para una compraventa de inmueble en Colombia?">Requisitos para compraventa</button>
+                    <button type="button" data-ask="¿Cómo funciona la afectación a vivienda familiar?">Afectación a vivienda familiar</button>
+                    <button type="button" data-ask="Calcular gastos de escritura">Calcular gastos de escritura</button>
+                  </div>
+                </article>
+              </aside>
+
+              <!-- Chat funcional embebido -->
+              <div class="chat-column">
+                <section id="chat-panel" class="chat-panel embedded" role="dialog" aria-label="Asesor Jurídico y Comercial IA" aria-modal="false">
+                  <header class="chat-header">
+                    <span class="chat-avatar" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4.5 6v5.4c0 4.6 3.1 8.2 7.5 9.6 4.4-1.4 7.5-5 7.5-9.6V6L12 3Z" /></svg>
+                    </span>
+                    <div class="chat-header-title">
+                      <strong>Asesor Jurídico y Comercial IA</strong>
+                      <small id="chat-subtitle">Modo Demo · sin API Key</small>
+                    </div>
+                    <div class="chat-header-actions">
+                      <button id="chat-copy" class="chat-tool-btn" type="button" title="Copiar última respuesta">Copiar respuesta</button>
+                      <button id="chat-clear" class="chat-tool-btn" type="button" title="Limpiar conversación">Limpiar</button>
+                      <button id="chat-download" class="icon-btn" type="button" title="Descargar conversación" aria-label="Descargar conversación">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16" /></svg>
+                      </button>
+                      <button id="chat-settings" class="icon-btn" type="button" title="Configurar API Key" aria-label="Configurar API Key">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2 2-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21h-2.8v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-2-2 .1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3v-2.8h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 2-2 .1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V3h2.8v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 2 2-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1H21v2.8h-.1a1.7 1.7 0 0 0-1.5 1Z" /></svg>
+                      </button>
+                      <button id="chat-close" class="icon-btn" type="button" title="Cerrar" aria-label="Cerrar chat">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" /></svg>
+                      </button>
+                    </div>
+                  </header>
+
+                  <div class="chat-quick" role="group" aria-label="Acciones rápidas">
+                    <button type="button" class="chip" data-flow="calculadora">Calcular cierre</button>
+                    <button type="button" class="chip" data-flow="auditoria">Revisar tradición</button>
+                    <button type="button" class="chip" data-flow="match">Perfilar y redactar</button>
+                  </div>
+
+                  <div class="chat-quick chat-quick-secondary" role="group" aria-label="Sugerencias de consulta">
+                    <button type="button" class="chip chip-ask" data-ask="Requisitos para compraventa">Requisitos para compraventa</button>
+                    <button type="button" class="chip chip-ask" data-ask="¿Cómo funciona la afectación a vivienda familiar?">¿Cómo funciona la afectación a vivienda familiar?</button>
+                    <button type="button" class="chip chip-ask" data-ask="Calcular gastos de escritura">Calcular gastos de escritura</button>
+                  </div>
+
+                  <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+                    <div class="chat-welcome">
+                      <strong>Hola 👋</strong>
+                      <p>Soy tu asesor jurídico y comercial. Elige una acción rápida o escribe tu consulta. En modo Demo respondo sin conexión.</p>
+                    </div>
+                  </div>
+
+                  <div id="typing" class="typing" hidden aria-hidden="true"><span></span><span></span><span></span></div>
+
+                  <form id="chat-form" class="chat-form">
+                    <div id="attachment-note" class="attachment-note" hidden></div>
+                    <div class="chat-input-row">
+                      <input id="file-input" type="file" accept=".txt,.pdf,text/plain,application/pdf" hidden />
+                      <button id="attach-btn" class="icon-btn attach-btn" type="button" title="Adjuntar .txt o .pdf" aria-label="Adjuntar archivo txt o pdf">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5 12.5 20a5 5 0 0 1-7-7L14 4.5a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8" /></svg>
+                      </button>
+                      <textarea id="chat-input" rows="1" placeholder="Escribe tu consulta…" aria-label="Mensaje para el asesor"></textarea>
+                      <button id="send-btn" class="send-btn" type="submit" aria-label="Enviar mensaje">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12 2-12 2z" /></svg>
+                      </button>
+                    </div>
+                    <p class="chat-disclaimer">Estimaciones referenciales · No sustituye asesoría jurídica.</p>
+                  </form>
+                </section>
+
+                <div id="chat-placeholder" class="chat-placeholder" hidden>
+                  <span aria-hidden="true">✦</span>
+                  <strong>La conversación está cerrada</strong>
+                  <p>Tu historial se conserva. Puedes reabrir el workspace cuando quieras.</p>
+                  <button class="btn btn-primary btn-sm" type="button" data-open-chat>Reabrir asesor</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== VISTA 2: TRÁMITES Y REQUISITOS ===================== -->
+      <section id="panel-tramites" class="tab-panel actos" role="tabpanel" aria-labelledby="tab-tramites" hidden>
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Estructura clave · normativa colombiana</p>
+            <h2>Guía de Trámites y Requisitos</h2>
+            <p>Siete actos inmobiliarios y notariales con definiciones concisas y listados exactos para Antioquia, Colombia.</p>
+          </div>
+
+          <div class="actos-toolbar">
+            <label class="sr-only" for="actos-search">Buscar acto o requisito</label>
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+            <input id="actos-search" class="actos-search" type="search" placeholder="Buscar por nombre de trámite o requisito…" autocomplete="off" />
+          </div>
+
+          <div class="actos-grid">
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">01</span>
+                <span class="act-title">Compraventa de Inmueble (por Escritura Pública)</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Contrato solemne mediante el cual el vendedor se obliga a transferir la propiedad de un bien inmueble y el comprador a pagarla en dinero, perfeccionándose mediante escritura pública y su posterior inscripción en la Oficina de Registro de Instrumentos Públicos.</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Minuta de compraventa</li>
+                  <li>Escritura pública de tradición (título de adquisición del vendedor)</li>
+                  <li>Certificado de Tradición y Libertad vigente (máximo 30 días)</li>
+                  <li>Cédulas de ciudadanía de comprador y vendedor (o Certificado de Existencia y Representación Legal si son personas jurídicas)</li>
+                  <li>Paz y salvo de impuesto predial del año en curso</li>
+                  <li>Paz y salvo de valorización (departamental y municipal, según el municipio)</li>
+                  <li>Paz y salvo de administración (si el inmueble está sometido a Propiedad Horizontal)</li>
+                  <li>Certificación bancaria o soporte de trazabilidad del pago</li>
+                  <li>Registro Único Tributario (RUT), si aplica</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Compraventa de inmueble (por escritura pública)">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">02</span>
+                <span class="act-title">Promesa de Compraventa</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Contrato preparatorio mediante el cual las partes se obligan recíprocamente a celebrar una compraventa futura sobre un inmueble determinado, fijando precio, plazo o condición, forma de pago y arras o cláusula penal.</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Documento privado escrito y firmado por las partes (recomendado con presentación personal o autenticación en notaría)</li>
+                  <li>Cédulas de ciudadanía de promitente vendedor y promitente comprador (o Certificado de Cámara de Comercio)</li>
+                  <li>Certificado de Tradición y Libertad actualizado</li>
+                  <li>Escritura pública anterior o ficha catastral para identificar plenamente el inmueble (matrícula inmobiliaria, linderos y dirección)</li>
+                  <li>Paz y salvo de impuesto predial y administración (verificación previa)</li>
+                  <li>Certificación bancaria para consignación de arras o abonos</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Promesa de compraventa">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">03</span>
+                <span class="act-title">Hipoteca</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Derecho real de garantía constituido mediante escritura pública sobre un bien inmueble que permanece en poder del deudor, con el fin de respaldar el cumplimiento de una obligación propia o ajena.</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Carta de aprobación del crédito o minuta enviada por la entidad financiera (o acreedor)</li>
+                  <li>Escritura pública de constitución de hipoteca</li>
+                  <li>Certificado de Tradición y Libertad vigente (máximo 30 días)</li>
+                  <li>Escritura pública de propiedad (título de adquisición del constituyente)</li>
+                  <li>Cédulas de ciudadanía del deudor hipotecario y del acreedor (o Certificado de Cámara de Comercio y poder del representante del banco)</li>
+                  <li>Paz y salvo de impuesto predial vigente</li>
+                  <li>Paz y salvo de valorización</li>
+                  <li>Avalúo comercial vigente del inmueble (exigido por entidades financieras)</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Hipoteca">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">04</span>
+                <span class="act-title">Sucesión (Trámite Notarial)</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Proceso mediante el cual se liquida la herencia y la sociedad conyugal o patrimonial de una persona fallecida y se adjudican sus bienes y deudas a sus herederos o legatarios de común acuerdo ante notario.</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Solicitud de apertura de sucesión y trabajo de partición y adjudicación suscritos por abogado titulado (cuando el activo supera los 15 SMLMV)</li>
+                  <li>Poder especial otorgado al abogado por todos los herederos y el cónyuge o compañero permanente</li>
+                  <li>Registro civil de defunción del causante</li>
+                  <li>Registro civil de matrimonio o declaración de unión marital de hecho (si aplica)</li>
+                  <li>Registros civiles de nacimiento de los herederos para acreditar parentesco</li>
+                  <li>Cédulas de ciudadanía de los interesados</li>
+                  <li>Escrituras públicas y Certificados de Tradición y Libertad vigentes de los inmuebles</li>
+                  <li>Paz y salvo de impuesto predial vigente y paz y salvo de valorización</li>
+                  <li>Paz y salvo de administración (si aplica Propiedad Horizontal)</li>
+                  <li>Certificados de avalúo catastral vigente de los bienes</li>
+                  <li>Inventario y avalúo de bienes y deudas de la sucesión</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Sucesión (trámite notarial)">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">05</span>
+                <span class="act-title">Cancelación de Hipoteca</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Acto solemne mediante el cual el acreedor declara extinguida la obligación garantizada y autoriza levantar el gravamen hipotecario que pesa sobre el inmueble mediante escritura pública y su registro.</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Minuta o carta de autorización de cancelación expedida por la entidad financiera o acreedor</li>
+                  <li>Certificado de Existencia y Representación Legal de la entidad acreedora y poder del representante autorizado (si es persona jurídica)</li>
+                  <li>Cédula de ciudadanía del acreedor (si es persona natural) y del propietario solicitante</li>
+                  <li>Copia de la escritura pública mediante la cual se constituyó la hipoteca</li>
+                  <li>Certificado de Tradición y Libertad vigente del inmueble</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Cancelación de hipoteca">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">06</span>
+                <span class="act-title">Prenda (Garantía Mobiliaria)</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Contrato de garantía real que recae sobre bienes muebles (con o sin tenencia del acreedor) para asegurar el cumplimiento de una obligación principal, oponible frente a terceros mediante su inscripción en el Registro de Garantías Mobiliarias (Confecámaras).</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Contrato de prenda o de garantía mobiliaria suscrito por las partes</li>
+                  <li>Cédulas de ciudadanía de deudor garante y acreedor garantizado (o Certificado de Cámara de Comercio)</li>
+                  <li>Documento que acredite la propiedad y descripción del bien mueble (factura de compra, manifiesto de importación o licencia de tránsito si es vehículo)</li>
+                  <li>Certificación de libertad o historial del bien (ej. RUNT para vehículos)</li>
+                  <li>Formulario de inscripción en el Registro de Garantías Mobiliarias (RGM)</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Prenda (garantía mobiliaria)">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+
+            <details class="act-card" open>
+              <summary class="act-summary">
+                <span class="act-index">07</span>
+                <span class="act-title">Contrato de Arrendamiento de Inmueble</span>
+              </summary>
+              <div class="act-body">
+                <p class="act-def"><strong>Definición:</strong> Contrato consensual mediante el cual el arrendador concede el uso y goce de un bien inmueble al arrendatario a cambio del pago periódico de un canon de arrendamiento, regulado por la Ley 820 de 2003 (vivienda urbana) o el Código de Comercio (locales comerciales).</p>
+                <p class="act-req-title">Requisitos</p>
+                <ul class="act-requirements">
+                  <li>Contrato de arrendamiento escrito y firmado (con inventario detallado del estado del inmueble)</li>
+                  <li>Cédulas de ciudadanía de arrendador, arrendatario y codeudor(es) (o Certificado de Cámara de Comercio)</li>
+                  <li>Certificado de Tradición y Libertad del inmueble para acreditar calidad de propietario o facultad para arrendar</li>
+                  <li>Soportes de ingresos o solvencia económica del arrendatario y codeudor(es) (certificado laboral, extractos bancarios o declaración de renta)</li>
+                  <li>Póliza de seguro de arrendamiento o estudio de afianzadora (si aplica)</li>
+                  <li>Reglamento de Propiedad Horizontal o manual de convivencia (entrega de copia al arrendatario si aplica)</li>
+                </ul>
+                <button type="button" class="act-consult-btn" data-acto="Contrato de arrendamiento de inmueble">Consultar este acto con el Asesor IA</button>
+              </div>
+            </details>
+          </div>
+
+          <p id="actos-empty" class="actos-empty" hidden>No se encontró ningún acto con ese término.</p>
+          <p class="actos-note">Contenido informativo bajo normativa colombiana. No sustituye el estudio de títulos ni la asesoría personalizada de un abogado.</p>
+        </div>
+      </section>
+
+      <!-- ===================== VISTA 3: CONTACTO ===================== -->
+      <section id="panel-contacto" class="tab-panel contacto" role="tabpanel" aria-labelledby="tab-contacto" hidden>
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Atención directa · Antioquia, Colombia</p>
+            <h2>Contacto y Asesoría Directa</h2>
+            <p>El Asesor IA resuelve lo esencial al instante. Para un estudio de títulos o una representación jurídica, habla directamente con el profesional.</p>
+          </div>
+
+          <div class="contacto-grid">
+            <article class="profile-card">
+              <span class="profile-ornament" aria-hidden="true">§</span>
+              <p class="profile-eyebrow">Perfil profesional</p>
+              <h3>Asesoría Jurídica Personalizada</h3>
+              <p class="profile-name">Abogado <strong>Alexander Álvarez Cortés</strong></p>
+              <p class="profile-specialty">Derecho Inmobiliario, Notarial, Registral y Estudio de Títulos · Antioquia, Colombia.</p>
+
+              <div class="profile-block">
+                <span class="profile-label">Teléfono / WhatsApp</span>
+                <a class="profile-value" href="tel:+573136001036">313 600 1036</a>
+                <div class="profile-actions">
+                  <a class="btn btn-outline btn-sm" href="tel:+573136001036">Llamar</a>
+                  <a class="btn btn-gold btn-sm" href="https://wa.me/573136001036" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+              </div>
+
+              <div class="profile-block">
+                <span class="profile-label">Correo institucional</span>
+                <a class="profile-value" href="mailto:ealvarez@unilasallista.edu.co">ealvarez@unilasallista.edu.co</a>
+                <div class="profile-actions">
+                  <button id="copy-email-btn" class="btn btn-outline btn-sm" type="button">Copiar correo</button>
+                </div>
+              </div>
+
+              <p class="profile-note">Atención en derecho inmobiliario, estudios de títulos, trámites notariales y representación jurídica en Antioquia, Colombia.</p>
+            </article>
+
+            <article class="card contacto-card">
+              <span class="card-number">02</span>
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="m4 6 8 6 8-6" /></svg>
+              </span>
+              <h3>Déjanos tu consulta</h3>
+              <form id="contacto-form" class="contacto-form" novalidate>
+                <div class="form-field">
+                  <label for="contacto-nombre">Nombre completo</label>
+                  <input id="contacto-nombre" name="nombre" type="text" placeholder="Tu nombre y apellido" required autocomplete="name" />
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="contacto-telefono">Teléfono / WhatsApp</label>
+                    <input id="contacto-telefono" name="telefono" type="tel" inputmode="tel" placeholder="300 000 0000" required autocomplete="tel" />
+                  </div>
+                  <div class="form-field">
+                    <label for="contacto-email">Correo electrónico</label>
+                    <input id="contacto-email" name="email" type="email" placeholder="tu@correo.com" required autocomplete="email" />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="contacto-mensaje">Breve resumen de tu inquietud</label>
+                  <textarea id="contacto-mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre el inmueble, el trámite o la situación jurídica." required></textarea>
+                </div>
+                <p id="contacto-error" class="form-error" hidden>Revisa los campos marcados: todos son obligatorios y el correo debe ser válido.</p>
+                <button class="btn btn-primary contacto-submit" type="submit">Solicitar asesoría</button>
+              </form>
+
+              <div id="contacto-confirmacion" class="contacto-confirmacion" hidden>
+                <strong>✓ Solicitud registrada</strong>
+                <p>Tus datos quedaron guardados como respaldo local. Para agilizar la respuesta, envía la misma solicitud por correo o WhatsApp:</p>
+                <div class="contacto-actions">
+                  <a id="contacto-mail" class="btn btn-outline btn-sm" href="#">Enviar por correo</a>
+                  <a id="contacto-whatsapp" class="btn btn-gold btn-sm" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      © 2026 Fox Inmobiliario · Asesoría Jurídica Inmobiliaria y Notarial. Las respuestas del asistente IA son orientativas y no sustituyen un estudio de títulos formal.
+    </div>
+  </footer>
+
+  <!-- ===================== ACCESO RÁPIDO AL CHAT ===================== -->
+  <button id="chat-launcher" class="chat-launcher" type="button" aria-label="Abrir Asesor Jurídico y Comercial IA" aria-expanded="true" aria-controls="chat-panel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M12 3 4.5 6v5.4c0 4.6 3.1 8.2 7.5 9.6 4.4-1.4 7.5-5 7.5-9.6V6L12 3Z" />
+      <path d="M9 11h.01M15 11h.01M9 15h6" stroke-linecap="round" />
+    </svg>
+    <span class="launcher-pulse" aria-hidden="true"></span>
+  </button>
+
+  <!-- ===================== MODAL DE API KEY ===================== -->
+  <div id="key-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="key-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="key-modal-title">Configurar API Key</h2>
+        <button class="icon-btn" type="button" data-close-modal aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+      </div>
+      <form id="key-form">
+        <p>
+          Pega tu API Key de <strong>Google Gemini</strong> (claves nuevas <code>AQ.…</code> o clásicas <code>AIza…</code>) para conectarte a <code>gemini-2.5-flash</code>.
+          La clave se guarda solo en el <code>localStorage</code> de este navegador y el indicador pasará a <strong>Modo Online</strong>.
+        </p>
+        <label for="api-key-input">API Key</label>
+        <input id="api-key-input" type="password" placeholder="AIza… o AQ.…" autocomplete="off" spellcheck="false" />
+        <p class="modal-warning">
+          Uso para pruebas: en producción usa un proxy backend. Nunca publiques la clave en tu repositorio.
+          Sin clave, el agente funciona en <strong>Modo Demo</strong> sin conexión.
+        </p>
+        <div class="modal-actions">
+          <button id="key-clear" class="btn btn-ghost" type="button">Quitar clave</button>
+          <span class="spacer"></span>
+          <button id="key-cancel" class="btn btn-outline" type="button" data-close-modal>Cancelar</button>
+          <button id="key-save" class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="prompts.js?v=13"></script>
+  <script src="agent.js?v=13"></script>
+</body>
+</html>
